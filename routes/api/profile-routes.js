@@ -7,7 +7,7 @@ const { Class, Origin, Profile, Race } = require('../../models');
 //TYPICALLY this would be difficult with a multitude of profiles
 router.get('/', async (req, res) => {
     try {
-      const profileData = await Category.findAll({
+      const profileData = await Profile.findAll({
         include: [
           { model: Class },
           { model: Origin },
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find one profile by its `id` value
     try {
-      const profileIdData = await Category.findByPk(req.params.id, {
+      const profileIdData = await Profile.findByPk(req.params.id, {
         include: [
           { model: Class },
           { model: Origin },
@@ -47,7 +47,7 @@ router.get('/:id', async (req, res) => {
 //Find profile by players unique profile name
 router.get('/:name', async (req, res) => {
     try {
-      const profileIdData = await Category.findByPk(req.params.name, {
+      const profileIdData = await Profile.findByPk(req.params.name, {
         include: [
           { model: Class },
           { model: Origin },
@@ -109,7 +109,7 @@ router.put('/:name', (req, res) => {
 
 //Delete player by name
 router.delete('/:name', (req, res) => {
-  Category.destroy(
+  Profile.destroy(
   {
     where: {
       profile_name: req.params.profile_name,

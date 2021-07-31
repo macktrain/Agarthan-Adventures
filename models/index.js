@@ -1,6 +1,5 @@
 // import models
 const Class = require('./Class');
-const Origin = require('./Origin');
 const Race = require('./Race');
 const Profile = require('./Profile');
 
@@ -12,16 +11,6 @@ Profile.hasOne(Class, {
 // Class is in many profiles (1:M)
 Class.hasMany(Profile, {
   foreignKey: 'class_id',
-});
-
-// Profile hasOne Origin  (1:1)
-Profile.hasOne(Origin, {
-  foreignKey: 'origin_id',
-});
-
-// Class is in many profiles (1:M)
-Origin.hasMany(Profile, {
-  foreignKey: 'origin_id',
 });
 
 // Profile hasOne Race  (1:1)
@@ -36,7 +25,6 @@ Race.hasMany(Profile, {
 
 module.exports = {
   Class,
-  Origin,
   Race,
   Profile,
 };

@@ -31,23 +31,15 @@ Profile.init(
       allowNull: false,
     },
     profile_class: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'class',
         key: 'id'
       },
     },
-    profile_origin: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'origin',
-        key: 'id'
-      },
-    },
     profile_race: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'race',

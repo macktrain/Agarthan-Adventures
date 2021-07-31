@@ -7,7 +7,7 @@ const { Class } = require('../../models');
 router.get('/', async (req, res) => {
     // find all classes
     try {
-      const classData = await Product.findAll();
+      const classData = await Class.findAll();
       res.json(classData);
     } catch (e) {
       res.json(e);
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 // get one classes by id
 router.get('/:id', async (req, res) => {
     try {
-      const classIdData = await Product.findByPk(req.params.id);
+      const classIdData = await Class.findByPk(req.params.id);
       res.json(classIdData);
     } catch (e) {
       res.json(e);

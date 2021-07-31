@@ -19,6 +19,10 @@ Race.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    race_background: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,

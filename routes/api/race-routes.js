@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Class, Origin, Profile, Race } = require('../../models');
+const {  Race } = require('../../models');
 
 // The `/api/race` endpoint
 
 //Get race data 
 router.get('/', async (req, res) => {
     try {
-      const raceData = await Category.findAll();
+      const raceData = await Race.findAll();
       res.json(raceData);
     } catch (e) {
       res.json(e);
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 //Get race data by id
 router.get('/:id', async (req, res) => {
     try {
-      const raceIdData = await Category.findByPk(req.params.id);
+      const raceIdData = await Race.findByPk(req.params.id);
 
       if (!raceIdData) {
         res.status(404).json({ message: `Race with id# ${req.params.id} is not available.` });
@@ -34,7 +34,8 @@ router.get('/:id', async (req, res) => {
 // create a new race
 router.post('/', async (req, res) => {
   try {
-    const newRaceData = await Category.create(req.body);
+    const newRaceData = await Race.create(req.body);
+    console.log(req.body);
     // Successful request => error code 200
     res.status(200).json(newRaceData);
   } catch (err) {
@@ -67,7 +68,7 @@ router.put('/:id', (req, res) => {
 
 // delete a rac by its `id` value
 router.delete('/:id', (req, res) => {
-  Category.destroy(
+  Race.destroy(
   {
     where: {
       id: req.params.id,
