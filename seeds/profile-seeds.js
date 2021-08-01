@@ -6,8 +6,8 @@ const profileData = [
     profile_health: 500,
     profile_attack: 500,
     profile_defense: 500,
-    profile_class: 1,
-    profile_race: 1,
+    class_id: 1,
+    race_id: 1,
   },
 ];
 

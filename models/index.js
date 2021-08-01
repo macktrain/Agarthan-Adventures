@@ -3,8 +3,8 @@ const Class = require('./Class');
 const Race = require('./Race');
 const Profile = require('./Profile');
 
-// Profile hasOne Class  (1:1)
-Profile.hasOne(Class, {
+// Profile belongsTo Class  (1:1)
+Profile.belongsTo(Class, {
   foreignKey: 'class_id',
 });
 
@@ -13,8 +13,8 @@ Class.hasMany(Profile, {
   foreignKey: 'class_id',
 });
 
-// Profile hasOne Race  (1:1)
-Profile.hasOne(Race, {
+// Profile belongsTo Race  (1:1)
+Profile.belongsTo(Race, {
   foreignKey: 'race_id',
 });
 

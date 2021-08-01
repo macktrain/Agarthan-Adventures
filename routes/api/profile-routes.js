@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
       const profileData = await Profile.findAll({
         include: [
           { model: Class },
-          { model: Origin },
           { model: Race },
         ],
       });
@@ -27,7 +26,6 @@ router.get('/:id', async (req, res) => {
       const profileIdData = await Profile.findByPk(req.params.id, {
         include: [
           { model: Class },
-          { model: Origin },
           { model: Race },
         ],
       });
@@ -50,7 +48,6 @@ router.get('/:name', async (req, res) => {
       const profileIdData = await Profile.findByPk(req.params.name, {
         include: [
           { model: Class },
-          { model: Origin },
           { model: Race },
         ],
       });

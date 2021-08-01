@@ -30,7 +30,7 @@ Profile.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    profile_class: {
+    class_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -38,7 +38,7 @@ Profile.init(
         key: 'id'
       },
     },
-    profile_race: {
+    race_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

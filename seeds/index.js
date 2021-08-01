@@ -10,11 +10,12 @@ const seedAll = async () => {
   await seedClass();
   console.log('\n----- CLASS SEEDED -----\n');
 
+  await seedRace();
+  console.log('\n----- RACE SEEDED -----\n');
+  
+  //MUST run profile last because of foreign key constraints
   await seedProfile();
   console.log('\n----- PROFILE SEEDED -----\n');
-
-  await seedRaces();
-  console.log('\n----- RACE SEEDED -----\n');
 
   process.exit(0);
 };
