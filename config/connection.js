@@ -1,6 +1,6 @@
+const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const Sequelize = require('sequelize');
 /* Creates Sequelize Instance and pass connection parameters directly to Sequelize Constructor
    This mimics checking for a production env.  If not, then we go to localhost env            */
 const sequelize = process.env.JAWSDB_URL
