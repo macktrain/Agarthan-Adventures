@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Profile extends Model {}
+class Character extends Model {}
 
-Profile.init(
+Character.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,21 +12,21 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    profile_name: {
+    character_name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
-    profile_health: {
+    character_health: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 50,
     },
-    profile_attack: {
+    character_attack: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    profile_defense: {
+    character_defense: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -52,8 +52,8 @@ Profile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'profile',
+    modelName: 'character',
   }
 );
 
-module.exports = Profile;
+module.exports = Character;
