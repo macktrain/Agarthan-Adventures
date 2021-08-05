@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
         res.status(404).json({ message: `The Character with id# ${req.params.id} is not available.` });
         return;
       }
-      res.json(categoryDetail);
+      res.json(characterIdData);
       
     } catch (e) {
       res.json(e);
@@ -95,7 +95,7 @@ router.put('/:name', (req, res) => {
       },
     }
   )
-    .then((CharacterUpdatedData) => {
+    .then((characterUpdatedData) => {
       // Sends the updated book as a json response
       res.json(characterUpdatedData);
     })
