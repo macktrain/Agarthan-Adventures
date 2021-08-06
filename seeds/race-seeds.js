@@ -15,11 +15,11 @@ const raceData = [
   },
   {
     race_name: 'Husk',
-    race_background: 'Thought to be born from the remains of dead and forgotten trees laid in ruin from the fires brought on from the Depths of Hell Eternal, this race possesses an ancient dark knowledge rooted in what firea lay below, able to call on the aid of darkness and mostly dwell in caves; known primarily to emerge under the cover of night, these beings reign over Forgotten Cavern and the Forest of Shadows above.',
+    race_background: 'Thought to be born from the remains of dead and forgotten trees laid in ruin from the fires brought on from the Depths of Hell Eternal, this race possesses an ancient dark knowledge rooted in what firea lay below, able to call on the aid of darkness.',
   },
   {
     race_name: 'Nyah',
-    race_background: 'A race born from Elfien descent, this people branched from those who endowed themselves to the teachings and practices of the animals around them. Harnessing magic and enacting rituals to mimic the appearance and survival attributes of their kindred spirit guides.',
+    race_background: 'A race born from Elfien descent, this people branched from those who endowed themselves to the teachings and practices of the animals around them. Harnessing magic to mimic the appearance and survival attributes of their kindred spirit guides.',
   },
 ];
 

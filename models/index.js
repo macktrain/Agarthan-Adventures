@@ -1,4 +1,5 @@
 // import models
+const Bullies = require('./Bullies');
 const Class = require('./Class');
 const Race = require('./Race');
 const Character = require('./Character');
@@ -38,6 +39,7 @@ Race.hasMany(Character, {
 });
 
 module.exports = {
+  Bullies,
   Class,
   Race,
   Character,
