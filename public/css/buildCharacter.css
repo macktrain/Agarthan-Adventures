@@ -1,0 +1,7 @@
+.raceBtn, .classBtn {
+    height:75px;
+    width:150px;
+    font-size: 12px;
+    color: black;
+    background-color: white;
+}
