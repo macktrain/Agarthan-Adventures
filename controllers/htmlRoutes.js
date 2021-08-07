@@ -30,12 +30,19 @@ router.get('/login', (req, res) => {
 
 router.get('/testing', (req,res) => {
   res.render ('testing');
-
 })
 
-router.get('/build', (req,res) => {
-  res.render ('buildCharacter');
-
+router.get('/characterBuild', (req,res) => {
+  res.render ('characterBuild');
 })
+
+router.get('/characterMenu', (req,res) => {
+  res.render ('characterMenu');
+})
+
+router.get('/characterView', (req,res) => {
+  res.render ('characterView');
+})
+
 
 module.exports = router;

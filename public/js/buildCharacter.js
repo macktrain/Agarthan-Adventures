@@ -9,11 +9,11 @@ async function getRaces() {
   let raceHTML = '';
   for(let race in raceJSON) {
     raceHTML += "<div id='buttonDiv'>";
-    raceHTML += `   <button class='raceBtn' type='button' id=${raceJSON[race].race_name}>${raceJSON[race].race_name}</button>`;
+    raceHTML += `   <button type="button" class="btn btn-dark" value=${raceJSON[race].id}>${raceJSON[race].race_name}</button>`;
     raceHTML += "</div>";
   }
 
-  document.getElementById('raceButtonList').innerHTML = raceHTML;
+  document.getElementById('race').innerHTML = raceHTML;
 };
 
 async function getClasses() {
@@ -27,11 +27,11 @@ async function getClasses() {
   let classHTML = '';
   for(let key in classJSON) {
     classHTML += "<div id='buttonDiv'>";
-    classHTML += `   <button class='raceBtn' type='button' id=${classJSON[key].class_name}>${classJSON[key].class_name}</button>`;
+    classHTML += `   <button type="button" class="btn btn-dark" value=${classJSON[key].id}>${classJSON[key].class_name}</button>`;
     classHTML += "</div>";
   }
 
-  document.getElementById('classButtonList').innerHTML = classHTML;
+  document.getElementById('class').innerHTML = classHTML;
 };
 
 getRaces();
