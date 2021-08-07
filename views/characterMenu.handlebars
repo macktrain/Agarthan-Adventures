@@ -1,0 +1,13 @@
+<h2>MENU</h2>
+<script>
+   function switchView() {
+        res.render ('characterBuild');
+    }
+</script>
+
+<div id='menuCharacter'>
+    <button id="newCharacter" onclick='window.location.href = "/characterBuild"' value="POST">Build a new Character</button>
+    <button id="newCharacter" onclick='window.location.href = "/characterView"' value="PUT">View your Character</button>
+    <button id="newCharacter" onclick='window.location.href = "/characterUpdate"' value="UPDATE">Update your Character</button>
+    <button id="newCharacter" onclick='window.location.href = "/characterDelete"' value="DELETE">Delete your Character</button>
+</div>
