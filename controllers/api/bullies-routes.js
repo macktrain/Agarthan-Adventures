@@ -1,19 +1,18 @@
 const router = require('express').Router();
-const { Class, Character, Race } = require('../../models');
+const { Bullies } = require('../../models');
 
-// The `/api/character` endpoint
+// The `/api/bullies` endpoint
 
-// find all Characters
 //TYPICALLY this would be difficult with a multitude of Characters
 router.get('/', async (req, res) => {
     try {
-      const characterData = await Character.findAll({
+      const characterData = await Bullies.findAll({
         include: [
           { model: Class },
           { model: Race },
         ],
       });
-      res.json(characterData);
+      res.json(CharacterData);
     } catch (e) {
       res.json(e);
       console.log(e);
@@ -82,7 +81,9 @@ router.put('/:name', (req, res) => {
     {
       // Update these record fields with respective req.body element
       caracter_name: req.body.character_name,
-      character_xrp: req.body.character_xrp,
+      character_health: req.body.character_health,
+      character_attack: req.body.character_attack,
+      character_defense: req.body.character_defense,
       class_id: req.body.class_id,
       race_id: req.body.race_id,
     },

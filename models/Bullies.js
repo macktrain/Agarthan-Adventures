@@ -6,10 +6,15 @@ class Bullies extends Model {}
 
 Bullies.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     bully_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey = true,
     },
     bully_background: {
       type: DataTypes.STRING,
@@ -18,7 +23,6 @@ Bullies.init(
     impact_hide: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 50,
     },
     impact_run: {
       type: DataTypes.INTEGER,

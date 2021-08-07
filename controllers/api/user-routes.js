@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User, Character } = require('../../models');
 
-// The `/api/character` endpoint
+// The `/api/user` endpoint
 
 // find all users
 //TYPICALLY this would be difficult with a multitude of Characters
@@ -40,20 +41,20 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//Find Character by players unique Character name
-router.get('/:name', async (req, res) => {
+//Find user by email
+router.get('/:email', async (req, res) => {
     try {
-      const userNameData = await User.findByPk(req.params.name, {
+      const emailNameData = await User.findOne(req.params.email, {
         include: [
           { model: Character },
         ],
       });
 
-      if (!userNameData) {
-        res.status(404).json({ message: `The Character player name ${req.params.name} is not available.` });
+      if (!emailNameData) {
+        res.status(404).json({ message: `The Character player name ${req.params.email} is not available.` });
         return;
       }
-      res.json(userNameData);
+      res.json(emailNameData);
       
     } catch (e) {
       res.json(e);
@@ -61,10 +62,37 @@ router.get('/:name', async (req, res) => {
     }
 });
 
-// create a new Character
+
+//Find user by username
+router.get('/:username', async (req, res) => {
+  try {
+    const userNameData = await User.findOne(req.params.username, {
+      include: [
+        { model: Character },
+      ],
+    });
+
+    if (!userNameData) {
+      res.status(404).json({ message: `The username ${req.params.username} is not available.` });
+      return;
+    }
+    res.json(userNameData);
+    
+  } catch (e) {
+    res.json(e);
+    console.log(e);
+  }
+});
+
+// create a new user
 router.post('/', async (req, res) => {
   try {
-    const newUserData = await Character.create(req.body);
+    //need to be able to access the pwd, so must set up access to req.body
+    const newUser = req.body;
+    //now take the user password and hash it
+    newUser.password = await bcrypt.hash(req.body.password, 10);
+    // create the newUser with the hashed password and save to DB
+    const newUserData = await User.create(req.body);
     // Successful request => error code 200
     res.status(200).json(newUserData);
   } catch (err) {
@@ -73,37 +101,13 @@ router.post('/', async (req, res) => {
   }
 });
 
-//Update a User by username
-router.put('/:name', (req, res) => {  
-  Character.update(
-    {
-      // Update these record fields with respective req.body element
-      user_fname: req.body.user_fname,
-      user_lname: req.body.user_lname,
-      username: req.body.username,
-      user_passhash: req.body.user_passhash,
-    },
-    {
-      // Gets the books based on the isbn given in the request parameters
-      where: {
-        username: req.params.username,
-      },
-    }
-  )
-    .then((characterUpdatedData) => {
-      // Sends the updated book as a json response
-      res.json(characterUpdatedData);
-    })
-    .catch((err) => res.json(err));
-});
-
-//Delete player by username
+//Delete user by email
 //This delete will cascade delete the respective character as well.
-router.delete('/:name', (req, res) => {
+router.delete('/:email', (req, res) => {
   Character.destroy(
   {
     where: {
-      username: req.params.username,
+      username: req.params.email,
     },
   })
   .then((characterDeleteData) => {

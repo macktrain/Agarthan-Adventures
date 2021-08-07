@@ -34,3 +34,9 @@
     float: right;
     border: 2px solid white;
 }
+
+body {
+    background-image: url('/assets/bgpic.jpg');
+    background-size: cover;
+    height: 100%;
+  }

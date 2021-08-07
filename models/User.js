@@ -27,12 +27,15 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_passhash: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        isEmail: true,
+      }
     },
-    user_createDate: {
-      type: DataTypes.DATE,
+    password: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
