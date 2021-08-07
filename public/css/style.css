@@ -2,35 +2,56 @@
     font-family: 'Amatic SC', cursive;
     font-family: 'Kaushan Script', cursive;
 }
-
-
 #game-title {
     font-family: 'Amatic SC', cursive;
     font-family: 'Kaushan Script', cursive;
     color: white;
-    padding-top: 300px;
+    padding-top: 200px;
     padding-bottom: 50px;
 }
-
 #buttons {
     font-size: 300px;
 }
-
 #login-form {
-    padding-top: 350px;
+    padding-top: 150px;
 }
 #login-button {
     margin-top: 5px;
     border: 2px solid white;
 }
-
 #race {
     float: left;
-    
-    border: 2px solid white;
+    margin-left: 100px;
+    margin-top: 150px;
+    padding: 30px;
+    color: black;
 }
-
 #class {
     float: right;
-    border: 2px solid white;
+    margin-right: 100px;
+    margin-top: 150px;
+    padding: 30px;
+    color: black;
+}
+
+#login-title {
+    font-size:100px;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    padding-top: 50px;
+}
+#information {
+    font-size: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    padding-bottom: 50px;
+}
+#characterInput {
+    color: white;
+}
+#buildCharacter {
+    color: white;
+    font-size: 100px;
 }
