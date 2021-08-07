@@ -34,5 +34,30 @@ async function getClasses() {
   document.getElementById('class').innerHTML = classHTML;
 };
 
+async function createCharacter() {
+  
+  const url = '/api/character';
+  const bodyData = {
+    'caracter_name' : document.getElementById('caracter_name').value,
+    'character_xrp' : document.getElementById('character_xrp').value,
+    'class_id' : document.getElementById('class_id').value,
+    'race_id' : document.getElementById('race_id').value
+  };
+
+  let response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: bodyData,
+  });
+
+  const classJSON = await response.json()
+};
+
+
+
+document
+  .getElementById('createCharacter')
+  .addEventListener('click', createCharacter());
+
 getRaces();
 getClasses();

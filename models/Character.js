@@ -17,18 +17,10 @@ Character.init(
       allowNull: false,
       unique: true,
     },
-    character_health: {
+    character_xrp: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 50,
-    },
-    character_attack: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    character_defense: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
     },
     class_id: {
       type: DataTypes.INTEGER,

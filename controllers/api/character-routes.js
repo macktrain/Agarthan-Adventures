@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
           { model: Race },
         ],
       });
-      res.json(CharacterData);
+      res.json(characterData);
     } catch (e) {
       res.json(e);
       console.log(e);
@@ -82,9 +82,7 @@ router.put('/:name', (req, res) => {
     {
       // Update these record fields with respective req.body element
       caracter_name: req.body.character_name,
-      character_health: req.body.character_health,
-      character_attack: req.body.character_attack,
-      character_defense: req.body.character_defense,
+      character_xrp: req.body.character_xrp,
       class_id: req.body.class_id,
       race_id: req.body.race_id,
     },
