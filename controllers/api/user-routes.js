@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User, Character } = require('../../models');
 
-// The `/api/character` endpoint
+// The `/api/user` endpoint
 
 // find all users
 //TYPICALLY this would be difficult with a multitude of Characters
