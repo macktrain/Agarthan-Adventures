@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User, Character } = require('../../models');
 
 // The `/api/character` endpoint
@@ -86,6 +87,11 @@ router.get('/:username', async (req, res) => {
 // create a new user
 router.post('/', async (req, res) => {
   try {
+    //need to be able to access the pwd, so must set up access to req.body
+    const newUser = req.body;
+    //now take the user password and hash it
+    newUser.password = await bcrypt.hash(req.body.password, 10);
+    // create the newUser with the hashed password and save to DB
     const newUserData = await User.create(req.body);
     // Successful request => error code 200
     res.status(200).json(newUserData);
@@ -94,7 +100,6 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 
 //Delete user by email
 //This delete will cascade delete the respective character as well.
