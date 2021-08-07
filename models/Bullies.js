@@ -23,7 +23,6 @@ Bullies.init(
     impact_hide: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 50,
     },
     impact_run: {
       type: DataTypes.INTEGER,
