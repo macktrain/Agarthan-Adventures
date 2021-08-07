@@ -28,10 +28,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/testing', (req,res) => {
-  res.render ('testing');
-})
-
 router.get('/characterBuild', (req,res) => {
   res.render ('characterBuild');
 })
