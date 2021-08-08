@@ -1,31 +1,12 @@
-
-async function signIn() {
-  
-    const url = '/api/character';
-    const bodyData = {
-        'email' : document.getElementById('email').value,
-        'password' : document.getElementById('password').value,
-    };
-  
-    let response = await fetch(url, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-      body: bodyData,
-    });
-  
-    const signInResponse = await response.json()
-};
-  
 async function signUp() {
 
-    const url = '/api/character';
-    const bodyData = {
-        'user_fname' : document.getElementById('user_fname').value,
-        'user_lname' : document.getElementById('user_lname').value,
-        'username' : document.getElementById('username').value,
+    const url = '/api/user';
+    const data = {
         'email' : document.getElementById('email').value,
-        'password' : document.getElementById('password').value,
+        'password' : document.getElementById('newpassword').value,
     };
+
+    const bodyData = JSON.stringify(data);
     
     let response = await fetch(url, {
         method: 'POST',
@@ -33,16 +14,13 @@ async function signUp() {
         body: bodyData,
     });
     
-    const signupResponse = await response.json()
+    if (response.ok) {
+      document.location.replace('/login');
+    } else {
+      alert('There was an issue with either your username or password.');
+    }
 };
-    
-    
-    
-document
-.getElementById('signInBtn')
-.addEventListener('click', signIn());
 
 document
 .getElementById('signUpBtn')
-.addEventListener('click', SignUp());
-    
+.addEventListener('click', signUp);
