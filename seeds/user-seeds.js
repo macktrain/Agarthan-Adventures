@@ -2,38 +2,23 @@ const { User } = require('../models');
 
 const profileData = [
   {
-    user_fname: 'Lee',
-    user_lname: 'Macklin',
-    username: 'mack',
-    email: 'l@m.com',
+    email: 'leemacklin@yahoo.com',
     password: 'pwd',
   },
   {
-    user_fname: 'Dalton',
-    user_lname: 'Rothrock',
-    username: 'dTrain',
-    email: 'd@r.com',
+    email: 'daltonrothrock8@gmail.com',
     password: 'pwd',
   },
   {
-    user_fname: 'Jared',
-    user_lname: 'Minaga',
-    username: 'jRock',
-    email: 'j@m.com',
+    email: 'jared.minaga@gmail.com',
     password: 'pwd',
   },
   {
-    user_fname: 'Adam',
-    user_lname: 'Mielcarek',
-    username: 'Atom',
-    email: 'a@m.com',
+    email: 'atommielcarek@gmail.com',
     password: 'pwd',
   },
   {
-    user_fname: 'Cody',
-    user_lname: 'C',
-    username: 'Coolio',
-    email: 'c@c.com',
+    email: 'cj2898@outlook.com',
     password: 'pwd',
   },
 ];
