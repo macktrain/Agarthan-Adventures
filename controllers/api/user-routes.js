@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const bcrypt = require('bcrypt');
 const { User, Character } = require('../../models');
 
-// The `/api/character` endpoint
+// The `/api/user` endpoint
 
 // find all users
 //TYPICALLY this would be difficult with a multitude of Characters
@@ -20,67 +19,57 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
-  // find one user by its `id` value
-    try {
-      const userIdData = await User.findByPk(req.params.id, {
-        include: [
-          { model: Character },
-        ],
-      });
-
-      if (!userIdData) {
-        res.status(404).json({ message: `The Character with id# ${req.params.id} is not available.` });
-        return;
-      }
-      res.json(userIdData);
-      
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
-});
-
 //Find user by email
 router.get('/:email', async (req, res) => {
-    try {
-      const emailNameData = await User.findOne(req.params.email, {
-        include: [
-          { model: Character },
-        ],
-      });
-
-      if (!emailNameData) {
-        res.status(404).json({ message: `The Character player name ${req.params.email} is not available.` });
-        return;
-      }
-      res.json(emailNameData);
-      
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
-});
-
-
-//Find user by username
-router.get('/:username', async (req, res) => {
   try {
-    const userNameData = await User.findOne(req.params.username, {
+    const emailNameData = await User.findOne(req.params.email, {
       include: [
         { model: Character },
       ],
     });
 
-    if (!userNameData) {
-      res.status(404).json({ message: `The username ${req.params.username} is not available.` });
+    if (!emailNameData) {
+      res.status(404).json({ message: `The player with email ${req.params.email} is not available.` });
       return;
     }
-    res.json(userNameData);
+    res.json(emailNameData);
     
   } catch (e) {
     res.json(e);
     console.log(e);
+  }
+});
+
+//login with email.pwd combo
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { email: req.body.email } });
+
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 

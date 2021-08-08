@@ -28,6 +28,7 @@
 }
 #class {
     float: right;
+<<<<<<< HEAD
     margin-right: 100px;
     margin-top: 150px;
     padding: 30px;
@@ -55,3 +56,13 @@
     color: white;
     font-size: 100px;
 }
+=======
+    border: 2px solid white;
+}
+
+body {
+    background-image: url('/assets/bgpic.jpg');
+    background-size: cover;
+    height: 100%;
+  }
+>>>>>>> a82dd3ec8c1ad995dd5770b6df11e71758efd564
