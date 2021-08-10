@@ -2,8 +2,8 @@ async function signUp() {
 
     const url = '/api/user';
     const data = {
-        'email' : document.getElementById('email').value,
-        'password' : document.getElementById('newpassword').value,
+        'email' : document.getElementById('email').value.trim(),
+        'password' : document.getElementById('newpassword').value.trim(),
     };
 
     const bodyData = JSON.stringify(data);
