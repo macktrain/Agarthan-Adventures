@@ -50,7 +50,11 @@ async function createCharacter() {
     body: bodyData,
   });
 
-  const classJSON = await response.json()
+  if (response.ok) {
+    document.location.replace('/login');
+  } else {
+    alert('There was an issue building the character.');
+  }
 };
 
 

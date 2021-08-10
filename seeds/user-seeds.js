@@ -1,43 +1,32 @@
 const { User } = require('../models');
+const bcrypt = require('bcrypt');
+require('dotenv').config();
 
-const profileData = [
+const seededPwd = bcrypt.hashSync(process.env.SEED_PASSWORD, 10);
+
+const userData = [
   {
-    user_fname: 'Lee',
-    user_lname: 'Macklin',
-    username: 'mack',
-    email: 'l@m.com',
-    password: 'pwd',
+    email: 'leemacklin@yahoo.com',
+    password: seededPwd,
   },
   {
-    user_fname: 'Dalton',
-    user_lname: 'Rothrock',
-    username: 'dTrain',
-    email: 'd@r.com',
-    password: 'pwd',
+    email: 'daltonrothrock8@gmail.com',
+    password: seededPwd,
   },
   {
-    user_fname: 'Jared',
-    user_lname: 'Minaga',
-    username: 'jRock',
-    email: 'j@m.com',
-    password: 'pwd',
+    email: 'jared.minaga@gmail.com',
+    password: seededPwd,
   },
   {
-    user_fname: 'Adam',
-    user_lname: 'Mielcarek',
-    username: 'Atom',
-    email: 'a@m.com',
-    password: 'pwd',
+    email: 'atommielcarek@gmail.com',
+    password: seededPwd,
   },
   {
-    user_fname: 'Cody',
-    user_lname: 'C',
-    username: 'Coolio',
-    email: 'c@c.com',
-    password: 'pwd',
+    email: 'cj2898@outlook.com',
+    password: seededPwd,
   },
 ];
 
-const seedProfile = () => User.bulkCreate(profileData);
+const seedUser = () => User.bulkCreate(userData);
 
-module.exports = seedProfile;
+module.exports = seedUser;
