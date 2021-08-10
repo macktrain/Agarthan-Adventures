@@ -57,8 +57,6 @@ async function createCharacter() {
   }
 };
 
-
-
 document
   .getElementById('createCharacter')
   .addEventListener('click', createCharacter());
