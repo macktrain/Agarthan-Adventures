@@ -1,3 +1,25 @@
+//This function allows you to update the characters XRP
+async function updateXRP(new_xrp, character_name) {
+
+    //new_xrp is the new value of the characters xrp after it has been calculated on the front end.
+    const data = {
+        'character_xrp' : new_xrp,
+    };
+
+    const response = await fetch(`/api/character/${character_name}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: data,
+      });
+
+      if (response.ok) {
+        document.location.replace('/*enter the next screen to head to like this: /nextpage */');
+      } else {
+        alert('Failed to log in');
+      }
+};
+
+
 const bully = {};
 
 async function impacts(number) {
@@ -7,7 +29,6 @@ async function impacts(number) {
     });
 
     const bullyJSON = await response.json();
-
 
     if (bullyJSON) {
         bully.bully_name = bullyJSON.bully_name;
