@@ -17,13 +17,13 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find one Bullies by its `id` value
     try {
-      const bulliesIdData = await Bullies.findByPk(req.params.id);
+      const bulliesIdData = await Bullies.findOne(req.body.id);
 
       if (!bulliesIdData) {
-        res.status(404).json({ message: `The Bullies with id# ${req.params.id} is not available.` });
+        res.status(404).json({ message: `The Bully with id# ${req.body.id} is not available.` });
         return;
       }
-      res.json(BulliesIdData);
+      res.json(bulliesIdData);
       
     } catch (e) {
       res.json(e);
@@ -34,18 +34,13 @@ router.get('/:id', async (req, res) => {
 //Find Bullies by players unique Bullies name
 router.get('/:name', async (req, res) => {
     try {
-      const BulliesIdData = await Bullies.findByPk(req.params.name, {
-        include: [
-          { model: Class },
-          { model: Race },
-        ],
-      });
+      const bulliesIdData = await Bullies.findOne(req.body.name);
 
-      if (!BulliesIdData) {
-        res.status(404).json({ message: `The Bullies player name ${req.params.name} is not available.` });
+      if (!bulliesIdData) {
+        res.status(404).json({ message: `The Bullies player name ${req.body.name} is not available.` });
         return;
       }
-      res.json(BulliesIdData);
+      res.json(bulliesIdData);
       
     } catch (e) {
       res.json(e);
