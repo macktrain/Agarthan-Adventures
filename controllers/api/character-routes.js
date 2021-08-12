@@ -42,28 +42,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//Find Character by players unique Character name
-router.get('/:name', async (req, res) => {
-    try {
-      const characterIdData = await Character.findByPk(req.params.name, {
-        include: [
-          { model: Class },
-          { model: Race },
-        ],
-      });
-
-      if (!characterIdData) {
-        res.status(404).json({ message: `The Character player name ${req.params.name} is not available.` });
-        return;
-      }
-      res.json(characterIdData);
-      
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
-});
-
 // create a new Character
 router.post('/', async (req, res) => {
   try {

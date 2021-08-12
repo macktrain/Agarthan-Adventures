@@ -76,11 +76,6 @@ router.post('/login', async (req, res) => {
 // create a new user
 router.post('/', async (req, res) => {
   try {
-    //need to be able to access the pwd, so must set up access to req.body
-    const newUser = req.body;
-    //now take the user password and hash it
-    newUser.password = await bcrypt.hash(req.body.password, 10);
-    // create the newUser with the hashed password and save to DB
     const newUserData = await User.create(req.body);
     // Successful request => error code 200
     res.status(200).json(newUserData);
@@ -93,10 +88,10 @@ router.post('/', async (req, res) => {
 //Delete user by email
 //This delete will cascade delete the respective character as well.
 router.delete('/:email', (req, res) => {
-  Character.destroy(
+  User.destroy(
   {
     where: {
-      username: req.params.email,
+      email: req.params.email,
     },
   })
   .then((characterDeleteData) => {
