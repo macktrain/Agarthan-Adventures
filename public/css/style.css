@@ -20,18 +20,6 @@
     margin-top: 5px;
     border: 2px solid white;
 }
-#race {
-    float: left;
-    margin-left: 100px;
-    margin-top: 150px;
-    padding: 30px;
-    color: black;
-}
-#class {
-    float: right;
-    border: 2px solid white;
-}
-
 body {
     background-image: url('/assets/bgpic.jpg');
     background-size: cover;
