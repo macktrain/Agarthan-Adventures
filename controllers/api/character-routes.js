@@ -6,14 +6,41 @@ const { Class, Character, Race } = require('../../models');
 // find all Characters
 //TYPICALLY this would be difficult with a multitude of Characters
 router.get('/', async (req, res) => {
+  try {
+    const characterData = await Character.findAll({
+      include: [
+        { model: Class },
+        { model: Race },
+      ],
+    });
+    res.json(characterData);
+  } catch (e) {
+    res.json(e);
+    console.log(e);
+  }
+});
+
+//TYPICALLY this would be difficult with a multitude of Characters
+router.get('/', async (req, res) => {
+  try {
+    const characterData = await Character.findAll({
+      include: [
+        { model: Class },
+        { model: Race },
+      ],
+    });
+    res.json(characterData);
+  } catch (e) {
+    res.json(e);
+    console.log(e);
+  }
+});
+
+//pulls xrp values
+router.get('/xrp', async (req, res) => {
     try {
-      const characterData = await Character.findAll({
-        include: [
-          { model: Class },
-          { model: Race },
-        ],
-      });
-      res.json(characterData);
+      const characterXRP = await Character.findOne({ where: { id: req.body.id } });
+      res.json(characterXRP);
     } catch (e) {
       res.json(e);
       console.log(e);
