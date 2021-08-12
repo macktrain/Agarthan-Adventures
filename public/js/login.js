@@ -3,16 +3,18 @@ const logIn = async (event) => {
 
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
+  const url = '/api/user/login';
 
   if (email && password) {
-    const response = await fetch('/api/user/login', {
+    const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+      headers: { 'Content-Type': 'application/json' 
+    },
+  });
 
     if (response.ok) {
-      document.location.replace('/gameMenu');
+        document.location.replace('/gameMenu');
     } else {
       alert('Failed to log in');
     }
