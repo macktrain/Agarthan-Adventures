@@ -2,7 +2,7 @@ async function getRaces() {
   let response = await fetch('/api/race', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-  });
+});
 
   const raceJSON = await response.json()
 
@@ -20,7 +20,7 @@ async function getClasses() {
   let response = await fetch('/api/class', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-  });
+});
 
   const classJSON = await response.json()
 
