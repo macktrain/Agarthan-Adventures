@@ -54,8 +54,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-//Update a Character by name
-router.put('/:name', (req, res) => {  
+//Update a Character by id
+router.put('/:id', (req, res) => {  
   Character.update(
     {
       // Update these record fields with respective req.body element
@@ -65,9 +65,9 @@ router.put('/:name', (req, res) => {
       race_id: req.body.race_id,
     },
     {
-      // Gets the books based on the isbn given in the request parameters
+      
       where: {
-        character_name: req.params.name,
+        id: req.params.id,
       },
     }
   )

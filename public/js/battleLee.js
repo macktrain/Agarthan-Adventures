@@ -26,8 +26,13 @@ const battle = async (x) => {
   document.getElementById('xrp-value').innerHTML = (updatedXrp);
   updateXrp(updatedXrp);
 };
-function updateXrp(x) {
-    
+const updateXrp = async (x) => {
+    const response = await fetch(`/api/character/${id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({character_xrp: x})
+    })
+document.location.replace('/cody');
 }
 
 document.getElementById("choiceFight").addEventListener("click", (event) => {
