@@ -69,6 +69,7 @@ router.post('/login', async (req, res) => {
         message: 'You are now logged in!',
         logged_in: true,
         user_id: userData.id,
+        character_id: userData.character,
       });
     });
 
