@@ -4,7 +4,7 @@ const bullyData = [
     {
       bully_name: 'Mack Train',
       bully_background: 'Stealin\' all of your cookeis',
-      battle_text: 'As you move through the forest you find a clearing, upon reaching it you come face to face with a lumbering brutish creature. The creature reacts but is not very quick, and swings at you, you manage to evade the attack but only just. You must act quickly.',
+      battle_text: 'As you move through the forest you find a clearing, upon reaching it you come face to face with a lumbering brutish creature. The creature reacts but is not very quick, and swings at you, you manage to evade the attack but only just.',
       impact_hide: 7,
       impact_run: 3,
       impact_fight: 10,
@@ -13,7 +13,7 @@ const bullyData = [
     {
       bully_name: 'Cold Stone Cody',
       bully_background: 'Chillin',
-      battle_text: 'You enter a colossal underground cavern, with light only leaking through the giant entrance. As you move towards the door on the other side the ground begins to tremble beneath you. A gargantuan stone toritoise rises from the ground and begins levitating in front of you.',
+      battle_text: 'You enter a colossal underground cavern, with light only leaking through the giant entrance. As you move towards the door on the other side the ground begins to tremble beneath you. A gargantuan tortoise rises from the ground, levitating in front of you.',
       
       impact_hide: 9,
       impact_run: 10,
@@ -41,7 +41,7 @@ const bullyData = [
     {
       bully_name: 'Atom Ickyoface',
       bully_background: 'I ain\'t no ant!',
-      battle_text: 'You hear a mettalic screaching and cackling off in the distance and as you approach it suddenly stops. A raspy high-pitched voice appears behind you "Hello there." The figure jumps over you with deadly grace, and looks up at you, stating "Dont be hasty, you are so close now."',
+      battle_text: 'You hear a metallic screaching off in the distance and as you approach it suddenly stops. A raspy high-pitched voice appears behind you "Hello there." The figure jumps over you with deadly grace, and looks up at you, "Dont be hasty, you are so close now."',
       impact_hide: -7,
       impact_run: 100,
       impact_fight: 10,
