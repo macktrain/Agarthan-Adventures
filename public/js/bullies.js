@@ -33,10 +33,10 @@ async function impacts(number) {
     if (bullyJSON) {
         bully.bully_name = bullyJSON.bully_name;
         bully.bully_background = bullyJSON.bully_background;
-        bully.bully_hide = bullyJSON.bully_hide;
-        bully.bully_run = bullyJSON.bully_run;
-        bully.bully_fight = bullyJSON.bully_fight;
-        bully.bully_bribe = bullyJSON.bully_bribe;
+        bully.bully_hide = bullyJSON.impact_hide;
+        bully.bully_run = bullyJSON.impact_run;
+        bully.bully_fight = bullyJSON.impact_fight;
+        bully.bully_bribe = bullyJSON.impact_bribe;
     } else {
         console.log(response)
         alert (`There is not a bully with id# ${number}`);
@@ -52,5 +52,5 @@ async function impacts(number) {
 */
 
 //assign x a value here
-impacts(x);
+
 //access key values of bully here

@@ -1,30 +1,52 @@
-function battle(x){
-    const currXrp = await fetch('/api/character/xrp', {
-        method: 'GET',
-        body: JSON.stringify({id}),
-        headers: { 'Content-Type': 'application/json' }
-    });
-    let xrpImpact = 0;
-    switch(x) {
-        case 'run':
-            xrpImpact = bully.bully_run;
-            break;
-        case 'fight':
-            xrpImpact = bully.bully_fight;
-            break;
-        case 'hide':
-            xrpImpact = bully.bully_hide;
-            break;
-        case 'bribe':
-            xrpImpact = bully.bully_bribe;
-    }
-    return (xrpImpact + currXrp);
+const id = 1;
+const battle = async (x) => {
+    
+  const response = await fetch(`/api/character/${id}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  const character = await response.json();
+  
+  let xrpImpact = 0;
+  switch (x) {
+    case "run":
+      xrpImpact = bully.bully_run;
+      break;
+    case "fight":
+      xrpImpact = bully.bully_fight;
+      break;
+    case "hide":
+      xrpImpact = bully.bully_hide;
+      break;
+    case "bribe":
+      xrpImpact = bully.bully_bribe;
+  }
+  const updatedXrp = (parseInt(xrpImpact) + parseInt(character.character_xrp));
+
+  document.getElementById('xrp-value').innerHTML = (updatedXrp);
+  updateXrp(updatedXrp);
+};
+function updateXrp(x) {
+    
 }
+
+document.getElementById("choiceFight").addEventListener("click", (event) => {
+    event.preventDefault();
+battle("fight")});
+document.getElementById("choiceHide").addEventListener("click", (event) => {
+    event.preventDefault();
+battle("hide")});
+document.getElementById("choiceBribe").addEventListener("click", (event) => {
+    event.preventDefault();
+battle("bribe")});
+document.getElementById("choiceRun").addEventListener("click", (event)=> {
+    event.preventDefault();
+battle("run")});
+
+
+// this calls the bullies impacts
 
 impacts(1);
 
-document.getElementById("choiceRun").addEventListener('click', battle('run'));
-document.getElementById("choiceFight").addEventListener('click', battle('fight'));
-document.getElementById("choiceHide").addEventListener('click', battle('hide'));
-document.getElementById("choiceBribe").addEventListener('click', battle('bribe'));
+
 
