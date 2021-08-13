@@ -6,8 +6,8 @@ function gotoPlayGame(){
     document.location.replace('/battle');
 }
 
-function gotoHowToPlay(){
-    document.location.replace('/playInstructions');
+function goToHowToPlay(){
+    document.location.replace('/tutorial');
 }
 
 document
@@ -19,5 +19,5 @@ document
 .addEventListener('click', gotoPlayGame);
 
 document
-.getElementById('howToPlayBtn')
-.addEventListener('click', gotoHowToPlay);
+.getElementById('tutorialBtn')
+.addEventListener('click', goToHowToPlay);
