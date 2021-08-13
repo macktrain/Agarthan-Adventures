@@ -11,6 +11,9 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
   
+  await seedUser();
+  console.log('\n----- USER SEEDED -----\n');
+  
   await seedBullies();
   console.log('\n----- BULLIES SEEDED -----\n');
 
@@ -19,10 +22,7 @@ const seedAll = async () => {
 
   await seedRace();
   console.log('\n----- RACE SEEDED -----\n');
-  
-  await seedUser();
-  console.log('\n----- USER SEEDED -----\n');
-  
+
   await seedCharacter();
   console.log('\n----- CHARACTER SEEDED -----\n');
 

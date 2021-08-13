@@ -5,6 +5,25 @@ body {
   height: 100%;
 }
 
+.xrpWidth{
+  width: 250px;
+}
+
+#buttonBox{
+  align-content: center;
+}
+
+.characterInput, #raceGroup, #classGroup {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.topRow{
+  display: flex;
+  justify-content: center;
+}
+
 #buildCharacter {
     color: white;
     padding: 30px;
