@@ -13,7 +13,7 @@ const bullyData = [
     {
       bully_name: 'Cold Stone Cody',
       bully_background: 'Chillin',
-      battle_text: '        You enter a colossal underground cavern, with light only leaking through the giant entrance. As you move towards the door on the other side the ground begins to tremble beneath you. A gargantuan stone toritoise rises from the ground and begins levitating in front of you. The massive creature beckons to you "Ahh, a traveler, what is it you seek from this place?"',
+      battle_text: 'You enter a colossal underground cavern, with light only leaking through the giant entrance. As you move towards the door on the other side the ground begins to tremble beneath you. A gargantuan stone toritoise rises from the ground and begins levitating in front of you. The massive creature beckons to you "Ahh, a traveler, what is it you seek from this place?"',
       
       impact_hide: 9,
       impact_run: 10,
