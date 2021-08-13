@@ -32,6 +32,10 @@ const updateXrp = async (x) => {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({character_xrp: x})
     })
+    document.getElementById("choiceFight").removeEventListener();
+    document.getElementById("choiceRun").removeEventListener();
+    document.getElementById("choiceHide").removeEventListener();
+    document.getElementById("choiceBribe").removeEventListener();
 document.location.replace('/cody');
 }
 

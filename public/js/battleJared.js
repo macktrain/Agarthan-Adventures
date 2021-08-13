@@ -32,7 +32,7 @@ const updateXrp = async (x) => {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({character_xrp: x})
     })
-document.location.replace('/cody');
+document.location.replace('/dalton');
 }
 
 document.getElementById("choiceFight").addEventListener("click", (event) => {
@@ -48,4 +48,4 @@ document.getElementById("choiceRun").addEventListener("click", (event)=> {
     event.preventDefault();
 battle("run")});
 
-impacts(2);
+impacts(3)
