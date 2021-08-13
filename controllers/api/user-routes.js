@@ -3,6 +3,21 @@ const { User, Character } = require('../../models');
 
 // The `/api/user` endpoint
 
+//LEAVE THIS FOR TESTING PURPOSES
+router.get('/', async (req, res) => {
+  try {
+    const characterData = await User.findAll({
+      include: [
+        { model: Character },
+      ],
+    });
+    res.json(characterData);
+  } catch (e) {
+    res.json(e);
+    console.log(e);
+  }
+});
+
 //Find user by email
 router.get('/:email', async (req, res) => {
   try {
@@ -24,14 +39,10 @@ router.get('/:email', async (req, res) => {
   }
 });
 
-//login with email.pwd combo
+//login with email and pwd combo
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne(req.params.email, {
-      include: [
-        { model: Character, where: {'user.id': 'character.id'}  },
-      ],
-    });
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
       res
@@ -56,7 +67,8 @@ router.post('/login', async (req, res) => {
       res.json({ 
         user: userData, 
         message: 'You are now logged in!',
-        logged_in: true
+        logged_in: true,
+        user_id: userData.id,
       });
     });
 

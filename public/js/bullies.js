@@ -19,10 +19,9 @@ async function updateXRP(new_xrp, character_name) {
       }
 };
 
-
-const bully = {};
-
-async function impacts(number) {
+//THIS object allows bully to be available to the rest of the application
+let bully = {};
+async function populateBullyImpacts(number) {
     let response = await fetch(`/api/bullies/${number}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
@@ -33,6 +32,7 @@ async function impacts(number) {
     if (bullyJSON) {
         bully.bully_name = bullyJSON.bully_name;
         bully.bully_background = bullyJSON.bully_background;
+        bully.battle_text = bullyJSON.battle_text;
         bully.bully_hide = bullyJSON.impact_hide;
         bully.bully_run = bullyJSON.impact_run;
         bully.bully_fight = bullyJSON.impact_fight;
@@ -41,6 +41,17 @@ async function impacts(number) {
         console.log(response)
         alert (`There is not a bully with id# ${number}`);
     }
+};
+
+//allow the character data to be transparent to front end
+let characterJSON = {};
+async function initCharacter(number) {
+  let response = await fetch(`/api/character/${number}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  characterJSON = await response.json();
 };
 
 /*

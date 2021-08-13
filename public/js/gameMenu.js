@@ -1,30 +1,22 @@
-function gotoCharacterCreate(){
-    document.location.replace('/characterBuild');
-}
-
 function gotoViewCharacter(){
     document.location.replace('/characterView');
 }
 
 function gotoPlayGame(){
-    document.location.replace('/');
+    document.location.replace('/battle');
 }
 
 function gotoHowToPlay(){
-    document.location.replace('/');
+    document.location.replace('/playInstructions');
 }
-
-document
-.getElementById('charCreateBtn')
-.addEventListener('click', gotoCharacterCreate);
 
 document
 .getElementById('viewCharBtn')
 .addEventListener('click', gotoViewCharacter);
 
 document
-.getElementById('playGameBtn', gotoPlayGame)
-.addEventListener('click', );
+.getElementById('playGameBtn')
+.addEventListener('click', gotoPlayGame);
 
 document
 .getElementById('howToPlayBtn')

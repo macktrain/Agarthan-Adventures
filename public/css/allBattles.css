@@ -1,7 +1,4 @@
 body {
-  background-image: url("/assets/jared.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 100%;
 }
 
@@ -27,6 +24,6 @@ body {
 .battle-card {
   opacity: 0.7;
 }
-#battle-text {
+#battle_text {
   opacity: 1.5;
 }

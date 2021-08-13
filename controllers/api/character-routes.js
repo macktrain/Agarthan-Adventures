@@ -3,6 +3,23 @@ const { Class, Character, Race } = require('../../models');
 
 // The `/api/character` endpoint
 
+//TYPICALLY this would be difficult with a multitude of Characters
+//LEAVE THIS FOR TESTING PURPOSES
+router.get('/', async (req, res) => {
+  try {
+    const characterData = await Character.findAll({
+      include: [
+        { model: Class },
+        { model: Race },
+      ],
+    });
+    res.json(characterData);
+  } catch (e) {
+    res.json(e);
+    console.log(e);
+  }
+});
+
 router.get('/:id', async (req, res) => {
   // find one Character by its `id` value
     try {
@@ -28,6 +45,7 @@ router.get('/:id', async (req, res) => {
 // create a new Character
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     const newCharacterData = await Character.create(req.body);
     // Successful request => error code 200
     res.status(200).json(newCharacterData);

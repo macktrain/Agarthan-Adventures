@@ -20,6 +20,10 @@ Bullies.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    battle_text: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     impact_hide: {
       type: DataTypes.INTEGER,
       allowNull: false,

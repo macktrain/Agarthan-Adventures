@@ -44,6 +44,11 @@ router.get('/characterMenu', (req,res) => {
 router.get('/characterView', (req,res) => {
   res.render ('characterView');
 });
+
+router.get('/battle', (req,res) => {
+  res.render ('battle');
+})
+
 router.get('/lee', (req,res) => {
   res.render ('battleLee');
 })
