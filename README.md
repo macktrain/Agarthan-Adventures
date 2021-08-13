@@ -8,7 +8,7 @@
   3. [Usage Information](#usage)
   4. [License](#license)
   5. [Contribution Guideline](#contributing)
-  6. [Test Instructions](#test)
+  6. [Future Development](#future)
   7. [Questions](#questions)
   8. [Screenshots](#screenshots)
  
