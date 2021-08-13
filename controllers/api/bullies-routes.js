@@ -17,10 +17,10 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find one Bullies by its `id` value
     try {
-      const bulliesIdData = await Bullies.findOne(req.body.id);
+      const bulliesIdData = await Bullies.findOne(req.params.id);
 
       if (!bulliesIdData) {
-        res.status(404).json({ message: `The Bully with id# ${req.body.id} is not available.` });
+        res.status(404).json({ message: `The Bully with id# ${req.params.id} is not available.` });
         return;
       }
       res.json(bulliesIdData);

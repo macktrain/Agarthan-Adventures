@@ -3,23 +3,6 @@ const { Class, Character, Race } = require('../../models');
 
 // The `/api/character` endpoint
 
-// find all Characters
-//TYPICALLY this would be difficult with a multitude of Characters
-router.get('/', async (req, res) => {
-    try {
-      const characterData = await Character.findAll({
-        include: [
-          { model: Class },
-          { model: Race },
-        ],
-      });
-      res.json(characterData);
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
-});
-
 router.get('/:id', async (req, res) => {
   // find one Character by its `id` value
     try {
@@ -54,8 +37,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-//Update a Character by name
-router.put('/:name', (req, res) => {  
+//Update a Character by id
+router.put('/:id', (req, res) => {  
   Character.update(
     {
       // Update these record fields with respective req.body element
@@ -65,9 +48,9 @@ router.put('/:name', (req, res) => {
       race_id: req.body.race_id,
     },
     {
-      // Gets the books based on the isbn given in the request parameters
+      
       where: {
-        character_name: req.params.name,
+        id: req.params.id,
       },
     }
   )

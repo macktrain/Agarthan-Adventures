@@ -3,28 +3,12 @@ const { User, Character } = require('../../models');
 
 // The `/api/user` endpoint
 
-// find all users
-//TYPICALLY this would be difficult with a multitude of Characters
-router.get('/', async (req, res) => {
-    try {
-      const userData = await User.findAll({
-        include: [
-          { model: Character },
-        ],
-      });
-      res.json(userData);
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
-});
-
 //Find user by email
 router.get('/:email', async (req, res) => {
   try {
     const emailNameData = await User.findOne(req.params.email, {
       include: [
-        { model: Character },
+        { model: Character, where: {'user.id': 'character.id'}  },
       ],
     });
 
@@ -43,7 +27,11 @@ router.get('/:email', async (req, res) => {
 //login with email.pwd combo
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne(req.params.email, {
+      include: [
+        { model: Character, where: {'user.id': 'character.id'}  },
+      ],
+    });
 
     if (!userData) {
       res
@@ -51,7 +39,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
+    
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -65,7 +53,11 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.json({ 
+        user: userData, 
+        message: 'You are now logged in!',
+        logged_in: true
+      });
     });
 
   } catch (err) {

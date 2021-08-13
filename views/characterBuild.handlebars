@@ -1,48 +1,57 @@
-<link rel="stylesheet" href="../public/css/style.css">
 
+<link rel="stylesheet" href="css/characterBuild.css">
+<div class="card col-6 mx-auto bg-dark">
 <div class="text-center" id='buildCharacter'>
     <h1>Build a Character</h1>
 </div>
 
-    <div class="text-center" id='characterInput'>
-        <label for="character_name">Character Name:</label>
-        <input id="character_name" name="character_name" type="text" />
+<div class="text-center" id='characterInput'>
+    <label for="character_name">Character Name:</label>
+    <input id="character_name" name="character_name" type="text" />
 
-        <label for="character_XRP">Character XRP:</label>
-        <input id="character_XRP" name="character_XRP" type="text" />
+    <label for="character_XRP">Character XRP:</label>
+    <input id="character_XRP" name="character_XRP" type="text" />
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="bg-light" id="race">
+                <h2>Choose Your Race:</h2>
+                <div class="btn-group-vertical col-12" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-dark">Human</button>
+                    <button type="button" class="btn btn-dark">Elfien</button>
+                    <button type="button" class="btn btn-dark">Husk</button>
+                    <button type="button" class="btn btn-dark">Celestial</button>
+                    <button type="button" class="btn btn-dark">Nyaughn-Nyaughn</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card picture" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://cdnb.artstation.com/p/assets/images/images/012/069/565/large/veljko-vavrin-elf-assasisn.jpg?1532888856"
+                    alt="Card image cap">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="bg-light" id="class">
+                <h2>Choose your Class:</h2>
+                <div class="btn-group-vertical col-12" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-dark">Assassin</button>
+                    <button type="button" class="btn btn-dark">Gunslinger</button>
+                    <button type="button" class="btn btn-dark">Husk</button>
+                    <button type="button" class="btn btn-dark">Heavy</button>
+                    <button type="button" class="btn btn-dark">Jack of All Trades</button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-        <div class="bg-light" id="race">
-            <h2>Choose Your Race:</h2>
-            <div class="btn-group-vertical col-12" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-dark">Human</button>
-                <button type="button" class="btn btn-dark">Elfien</button>
-                <button type="button" class="btn btn-dark">Husk</button>
-                <button type="button" class="btn btn-dark">Celestial</button>
-                <button type="button" class="btn btn-dark">Nyaughn-Nyaughn</button>
-            </div>
-        </div>
-        <div class="card picture" style="width: 18rem;">
-            <img class="card-img-top" src="https://cdnb.artstation.com/p/assets/images/images/012/069/565/large/veljko-vavrin-elf-assasisn.jpg?1532888856" alt="Card image cap">  
-        </div>
+<button type="button" class="btn btn-dark text-center col-2 d-block mx-auto" id="createButton">Create Character</button>
 
-        <div class="bg-light" id="class">
-            <h2>Choose your Class:</h2>
-            <div class="btn-group-vertical col-12" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-dark">Assassin</button>
-                <button type="button" class="btn btn-dark">Gunslinger</button>
-                <button type="button" class="btn btn-dark">Husk</button>
-                <button type="button" class="btn btn-dark">Heavy</button>
-                <button type="button" class="btn btn-dark">Jack of All Trades</button>
-            </div>
-        </div>
+<script src="/js/characterBuild.js"></script>
 
-        
 
-        <script src="/js/characterBuild.js"></script>
 
-       
-
-        <button type="button" id="createCharacter" class="text-center mx-auto fixed-bottom">Create Character</button>
-
-    
