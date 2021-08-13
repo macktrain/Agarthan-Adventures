@@ -15,12 +15,15 @@ const logIn = async (event) => {
 
     const userData = await response.json()
 
-    if (response.ok) 
-    {
+    if (response.ok) {
         localStorage.setItem('user_id', (parseInt(userData.user_id)));
-        document.location.replace('/characterBuild');
-    } else 
-      {
+        if (userData.character_id !== null) {
+          document.location.replace('/gameMenu');
+        } else {
+          document.location.replace('/characterBuild');
+        }
+    } 
+    else {
       alert('Failed to log in');
     }
   }
