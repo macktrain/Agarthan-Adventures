@@ -14,6 +14,7 @@ const sequelize = process.env.JAWSDB_URL
       host: 'localhost',
       //Dialect could be, if set up: mariadb, postgres, mssql, sqlite
       dialect: 'mysql',
+      port: 3306,
       dialectOptions: 
       {
         decimalNumbers: true,
