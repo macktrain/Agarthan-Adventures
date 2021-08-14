@@ -42,7 +42,14 @@ router.get('/:email', async (req, res) => {
 //login with email and pwd combo
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({
+      where: {
+        email: req.body.email
+      },
+      include: [{
+        model: Character
+      }]
+    });
 
     if (!userData) {
       res

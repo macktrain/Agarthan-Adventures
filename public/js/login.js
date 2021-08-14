@@ -13,11 +13,20 @@ const logIn = async (event) => {
       },
     });
 
-    const userData = await response.json()
+    const userData = await response.json();
 
     if (response.ok) {
+      
         localStorage.setItem('user_id', (parseInt(userData.user_id)));
-        if (userData.character_id !== null) {
+        const res = await fetch(`/api/character/${userData.user_id}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' 
+          },
+        });
+
+        const charData = await res.json();
+
+        if (res.ok) {
           document.location.replace('/gameMenu');
         } else {
           document.location.replace('/characterBuild');

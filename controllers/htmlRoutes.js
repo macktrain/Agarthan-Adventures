@@ -53,19 +53,4 @@ router.get('/tutorial', (req,res) => {
   res.render ('tutorial');
 })
 
-router.get('/lee', (req,res) => {
-  res.render ('battleLee');
-})
-router.get('/dalton', (req,res) => {
-  res.render ('battleDalton');
-})
-router.get('/cody', (req,res) => {
-  res.render ('battleCody');
-})
-router.get('/jared', (req,res) => {
-  res.render ('battleJared');
-})
-router.get('/adam', (req,res) => {
-  res.render ('battleAdam');
-})
 module.exports = router;
