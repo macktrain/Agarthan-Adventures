@@ -40,8 +40,7 @@ router.get('/:email', async (req, res) => {
 });
 
 //login with email and pwd combo
-router.post('/login', async (req, res) => 
-{
+router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
@@ -52,8 +51,7 @@ router.post('/login', async (req, res) =>
       }]
     });
 
-    if (!userData) 
-    {
+    if (!userData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
