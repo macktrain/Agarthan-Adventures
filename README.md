@@ -2,6 +2,7 @@
   
   ## Description<a name="Description"></a>
   - A deep intricate text adventure, to take you on a journey to the mysterious city of Agartha.
+
   ## Table of Contents
   1. [Description](#Description)
   2. [Installation Instructions](#Installation)
