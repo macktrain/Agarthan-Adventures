@@ -15,7 +15,7 @@
  
  
   ### Installation Instructions <a name="installation"></a>
-  - No need to install the application is deployed live at this link: [Agarthan-Adventures](#https://agarthan-adventures.herokuapp.com/)
+  - No need to install the application is deployed live at this link: [Agarthan-Adventures](https://agarthan-adventures.herokuapp.com/)
   ### Usage Information <a name="Usage"></a>
   - Just go to the app and signup to begin your adventure!
   ## License <a name="license"></a>
