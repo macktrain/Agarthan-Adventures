@@ -49,6 +49,10 @@ router.get('/battle', (req,res) => {
   res.render ('battle');
 })
 
+router.get('/summary', (req,res) => {
+  res.render ('summary');
+})
+
 router.get('/tutorial', (req,res) => {
   res.render ('tutorial');
 })

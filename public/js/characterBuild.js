@@ -83,13 +83,7 @@ async function createCharacter() {
           'class_id' : parseInt(globalClassValue),
           'race_id' :parseInt(globalRaceValue),
         };
-
-        // alert ('*' + (window.sessionStorage.getItem('user_id')) + '*');
-        // alert ('*' + (characterName) + '*');
-        // alert ('*' + (globalXRPValue) + '*');
-        // alert ('*' + (globalClassValue) + '*');
-        // alert ('*' + (globalRaceValue) + '*');
-    
+            
         const bodyData = JSON.stringify(data);
     
         let response = await fetch(url, {
