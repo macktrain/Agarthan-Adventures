@@ -26,9 +26,11 @@ const logIn = async (event) => {
 
         const charData = await res.json();
 
-        if (res.ok) {
+        if (res.ok) 
+        {
           document.location.replace('/gameMenu');
-        } else {
+        } else 
+        {
           document.location.replace('/characterBuild');
         }
     } 
