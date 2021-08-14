@@ -22,13 +22,13 @@
   ## Contribution Guideline <a name="contribution"></a>
   - n/a
   ## Future Development <a name="tests"></a>
-  - n/a
+  - Flesh out character builder 
   ## Questions <a name="questions"></a>
   Any questions? Please Contact Below
   - GitHub Link: 
   [Macktrain-Agarthan Adventures](https://github.com/Macktrain/Agarthan-Adventures) 
-  - Email: 
-  n/a
   ## Screenshots <a name="screenshots"></a>
-  ![]()
-  
+  ![](/public/assets/screenshots/homepage.png)
+  ![](/public/assets/screenshots/characterCreator.png)
+  ![](/public/assets/screenshots/gameMenu.png)
+  ![](/public/assets/screenshots/battleLee.png)
