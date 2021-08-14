@@ -33,20 +33,15 @@ const updateXrp = async (xrp) => {
         body: JSON.stringify({character_xrp: xrp})
     })
     //THIS TAKES US TO NEXT BATTLE IF you haven't lost (updatedXrp > 0)
-    if (x <= 6) {
-      if (updatedXrp > 0) {
-        //increments the global value x declared at the bottom and is used to call 'battleField(x)' at bottom of battle.js to start battles
-        x++;
-        //Readies the next battleField with next bully
-        battleField(x);
-      }
-      else{
-        alert ('You Lose!');
-        //GOTO SUMMARY PAGE-LOSS
-      }
-    } else {
-      alert ('You Win!');
-      //GOTO SUMMARY PAGE-WIN
+    //this controls the loop through the bullies
+    
+    if (updatedXrp > 0) {
+      x++;
+      battleField(x);
+    } 
+    else 
+    {
+        document.location.replace('/summary');
     }
 }
 
@@ -88,9 +83,14 @@ async function battleField(x){
     await initCharacter(session_user_id);
     updatedXrp = characterJSON.character_xrp;
   }
+  if (x<=6) {
   readyBattle(x);
   // now wait for firstFunction to finish...
   // do something else
+  }
+  else{
+    document.location.replace('/summary');
+  }
 };
 
 battleField(x);
