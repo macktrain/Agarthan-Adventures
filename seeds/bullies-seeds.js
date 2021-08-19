@@ -4,10 +4,10 @@ const bullyData = [
     {
       bully_name: 'Mack Train',
       bully_background: 'Stealin\' all of your cookeis',
-      impact_hide: 7,
-      impact_run: 5,
-      impact_fight: 10,
-      impact_bribe: 9,
+      impact_hide: -5,
+      impact_run: -5,
+      impact_fight: -10,
+      impact_bribe: -20,
     },
     {
       bully_name: 'Cold Stone Cody',
