@@ -45,5 +45,16 @@ router.get('/characterView', (req,res) => {
   res.render ('characterView');
 });
 
+router.get('/battle', (req,res) => {
+  res.render ('battle');
+})
+
+router.get('/summary', (req,res) => {
+  res.render ('summary');
+})
+
+router.get('/tutorial', (req,res) => {
+  res.render ('tutorial');
+})
 
 module.exports = router;

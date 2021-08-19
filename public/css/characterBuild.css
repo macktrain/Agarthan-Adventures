@@ -1,0 +1,53 @@
+
+body {
+  background-image: url("/assets/bgpic.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.xrpWidth{
+  width: 250px;
+}
+
+#buttonBox{
+  align-content: center;
+}
+
+.characterInput, #raceGroup, #classGroup {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.topRow{
+  display: flex;
+  justify-content: center;
+}
+
+#buildCharacter {
+    color: white;
+    padding: 30px;
+}
+#characterInput {
+    color: white;
+    padding: 10px;
+}
+
+#race {
+  float: left;
+  border: 2px solid white;
+  
+}
+#class {
+  float: right;
+  border: 2px solid white;
+}
+.container {
+    margin-right: 133px;
+    margin-top: 100px;
+}
+
+#createButton {
+    margin-top: 50px;
+    border: 2px solid white;
+}

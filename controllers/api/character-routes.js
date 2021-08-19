@@ -3,21 +3,21 @@ const { Class, Character, Race } = require('../../models');
 
 // The `/api/character` endpoint
 
-// find all Characters
 //TYPICALLY this would be difficult with a multitude of Characters
+//LEAVE THIS FOR TESTING PURPOSES
 router.get('/', async (req, res) => {
-    try {
-      const characterData = await Character.findAll({
-        include: [
-          { model: Class },
-          { model: Race },
-        ],
-      });
-      res.json(characterData);
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
+  try {
+    const characterData = await Character.findAll({
+      include: [
+        { model: Class },
+        { model: Race },
+      ],
+    });
+    res.json(characterData);
+  } catch (e) {
+    res.json(e);
+    console.log(e);
+  }
 });
 
 router.get('/:id', async (req, res) => {
@@ -42,31 +42,10 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-//Find Character by players unique Character name
-router.get('/:name', async (req, res) => {
-    try {
-      const characterIdData = await Character.findByPk(req.params.name, {
-        include: [
-          { model: Class },
-          { model: Race },
-        ],
-      });
-
-      if (!characterIdData) {
-        res.status(404).json({ message: `The Character player name ${req.params.name} is not available.` });
-        return;
-      }
-      res.json(characterIdData);
-      
-    } catch (e) {
-      res.json(e);
-      console.log(e);
-    }
-});
-
 // create a new Character
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     const newCharacterData = await Character.create(req.body);
     // Successful request => error code 200
     res.status(200).json(newCharacterData);
@@ -76,8 +55,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-//Update a Character by name
-router.put('/:name', (req, res) => {  
+//Update a Character by id
+router.put('/:id', (req, res) => {  
   Character.update(
     {
       // Update these record fields with respective req.body element
@@ -87,9 +66,9 @@ router.put('/:name', (req, res) => {
       race_id: req.body.race_id,
     },
     {
-      // Gets the books based on the isbn given in the request parameters
+      
       where: {
-        character_name: req.params.name,
+        id: req.params.id,
       },
     }
   )

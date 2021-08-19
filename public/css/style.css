@@ -2,41 +2,32 @@
     font-family: 'Amatic SC', cursive;
     font-family: 'Kaushan Script', cursive;
 }
-
-
 #game-title {
     font-family: 'Amatic SC', cursive;
     font-family: 'Kaushan Script', cursive;
     color: white;
-    padding-top: 300px;
+    padding-top: 200px;
     padding-bottom: 50px;
+    text-shadow: 9px 9px 9px black;
 }
-
 #buttons {
     font-size: 300px;
 }
-
 #login-form {
-    padding-top: 350px;
+    padding-top: 150px;
 }
 #login-button {
     margin-top: 5px;
     border: 2px solid white;
 }
-
-#race {
-    float: left;
-    
-    border: 2px solid white;
-}
-
-#class {
-    float: right;
-    border: 2px solid white;
-}
-
 body {
     background-image: url('/assets/bgpic.jpg');
     background-size: cover;
     height: 100%;
   }
+#information {
+    font-size: large;
+    color: white;
+    text-shadow: 2px 2px black;
+    padding-bottom: 10px;
+}

@@ -1,33 +1,74 @@
 
-<div id='buildCharacter'>
-    <h1>Build a character</h1>
-
-<div id='characterInput'>
-    <label for="caracter_name">Character Name:</label> 
-    <input id="caracter_name" name="caracter_name" type="text" />
-
-    <label for="character_XRP">Character XRP</label> 
-    <input id="character_XRP" name="character_XRP" type="text" />
-
-    <h2>Race Buttons</h2>
-        <div id='raceButtonList'>
+<link rel="stylesheet" href="css/characterBuild.css">
+<div class="card col-6 mx-auto bg-dark">
+    <div class="text-center" id='buildCharacter'>
+        <h1>Build a Character</h1>
     </div>
-
-    <h2>Class Buttons</h2>
-        <div id='classButtonList'>
+    <div id="inputbox">
+        <div class="text-center" id='characterInput'>
+            <div>
+                <label for="character_name">Character Name:</label>
+                <input id="character_name" name="character_name" type="text" />
+            </div>
+            <div>
+                <label for="character_XRP">Character XRP:</label>
+                <span id="character_XRP" name="character_XRP" class="xrpWidth" type="text">Click 'Roll XRP'</span>
+            </div>
+        </div>
+        <div id='buttonbox'>
+            <button onclick="startRandomNumber()">Roll XRP</button>
+            <button onclick="stopRandomNumber()">Stop</button>
+        </div>
     </div>
 </div>
-
-    <script src="/js/characterBuild.js"></script>
-
-    <div class="btn-group-vertical col-4 mx-auto" id="race" role="group" aria-label="Basic outlined example">
+<div class="CB-container">
+    <div class="row topRow">
+        <div class="col-3">
+            <div class="bg-light" id="race">
+                <h2>Choose Your Race:</h2>
+                <div class="btn-group-vertical col-12" role="group" aria-label="Basic example">
+                    <div id ='raceGroup'>
+                    </div> 
+                    <div>
+                        <label for="raceSel">Race:</label>
+                        <span id="raceSel" name="raceSel" type="text">Select Race</span>
+                    </div>
+                    <div>
+                        <label for="raceBack">Race Background:</label>
+                        <p id="raceBack" name="raceBack" type="text"></p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card picture" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://cdnb.artstation.com/p/assets/images/images/012/069/565/large/veljko-vavrin-elf-assasisn.jpg?1532888856"
+                    alt="Card image cap">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="bg-light" id="class">
+                <h2>Choose your Class:</h2>
+                <div class="btn-group-vertical col-12" role="group" aria-label="Basic example">
+                    <div id='classGroup'>
+                    </div>
+                    <div>
+                        <label for="classSel">Class:</label>
+                        <span id="classSel" name="classSel" type="text">Select Class</span>
+                    </div>
+                    <div>
+                        <label for="classBack">Race Background:</label>
+                        <p id="classBack" name="classBack" type="text"></p>
+                    </div>  
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <img class="character-image col-4" src="https://cg2.cgsociety.org/uploads/images/medium/sebgiroux-assassin-creed-odyss-1-065d38c5-xo8u.jpg" />
-    </div>
-    <div class="btn-group-vertical col-4 mx-auto" id="class" role="group" aria-label="Basic outlined example">
-    </div>
-
-    <button type="button" id="createCharacter" >Create Character</button>
-
 </div>
+<button type="button" class="btn btn-dark text-center col-2 d-block mx-auto" id="createButton">Create Character</button>
+
+<script src="/js/characterBuild.js"></script>
+
+
+
